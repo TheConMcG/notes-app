@@ -1,20 +1,16 @@
 <template>
   <div class="note-selectors">
-    <ActiveNoteSelector />
-    <OneNoteSelector />
-    <TwoNoteSelector />
+    <NoteSelector />
+    <NoteSelector />
+    <NoteSelector />
   </div>
 </template>
 
 <script>
-  import ActiveNoteSelector from './ActiveNoteSelector.vue'
-  import OneNoteSelector from './OneNoteSelector.vue'
-  import TwoNoteSelector from './TwoNoteSelector.vue'
+  import NoteSelector from './NoteSelector.vue'
   export default {
     components: {
-      ActiveNoteSelector,
-      OneNoteSelector,
-      TwoNoteSelector
+      NoteSelector
     }
   }
 </script>
