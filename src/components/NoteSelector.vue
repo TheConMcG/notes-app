@@ -1,5 +1,9 @@
 <template>
-  <div class="note-selector active">
+  <div 
+    class="note-selector" 
+    v-bind:class="{active: selectedNoteId === note.id}"
+    v-on:click="selectNote(note)"
+  >
     <p class="note-selector-id"> # {{ note.id }} </p> 
     <p class="note-selector-title"> {{ note.body }}</p>
     <p class="note-selector-timestamp"> {{ note.timestamp }}</p>
@@ -9,6 +13,12 @@
 
 <script>
 export default {
-  props: ['note']
+  props: ['note', 'selectedNoteId'],
+  methods: {
+    selectNote: function (note) {
+      // this.selectedNoteId = note.id;
+      this.$emit("selectNote", note)
+    }
+  }
 }
 </script>
